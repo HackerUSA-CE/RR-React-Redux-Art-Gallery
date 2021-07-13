@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { useSelector, useDispatch } from 'react-redux'
+import { darkMode, lightMode } from './features/modeSlice'
+import Nav from './components/Nav'
+import ContentWrapper from './components/ContentWrapper'
+import Footer from './components/Footer'
 
 function App() {
+  const dispatch = useDispatch()
+  const mode = useSelector((state) => state.mode)
+
+  const toggleMode = () => {
+    mode.darkMode ? dispatch(lightMode()) : dispatch(darkMode())
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ backgroundColor: mode.color1, color: 'white' }} className="App">
+      <Nav />
+      <button onClick={toggleMode}>{ mode.darkMode ? 'Light Mode' : 'Dark Mode' }</button>
+      <ContentWrapper />
+      <Footer />
     </div>
   );
 }
