@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NavLink = (props) => {
+function NavLink(props) {
 
     return (
         <div className="NavLink" style={{'backgroundColor': 'white'}}>
