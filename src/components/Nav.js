@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import NavLink from './NavLink'
 
-const Nav = () => {
+function Nav() {
     const mode = useSelector((state) => state.mode)
 
     return (
