@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-const Footer = () => {
+function Footer() {
     const mode = useSelector((state) => state.mode)
 
     return (
