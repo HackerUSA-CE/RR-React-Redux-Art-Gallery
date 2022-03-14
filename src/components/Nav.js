@@ -1,7 +1,7 @@
 import React from 'react'
 import NavLink from './NavLink'
 
-const Nav = () => {
+function Nav() {
 
     return (
         <div className="Nav" style={{'backgroundColor': 'white'}}>
