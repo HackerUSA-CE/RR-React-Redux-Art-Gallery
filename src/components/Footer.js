@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Footer = () => {
+function Footer() {
 
     return (
         <div className="Footer" style={{'backgroundColor': 'white'}}>
