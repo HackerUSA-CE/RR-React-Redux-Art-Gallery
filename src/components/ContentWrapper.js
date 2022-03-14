@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Photo from './Photo'
 
-const ContentWrapper = () => {
+function ContentWrapper() {
     const mode = useSelector((state) => state.mode)
 
     return (
