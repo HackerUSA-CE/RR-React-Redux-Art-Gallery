@@ -1,5 +1,5 @@
 import React from 'react'
-const Photo = () => {
+function Photo() {
 
     return (
         <div className="Photo">
