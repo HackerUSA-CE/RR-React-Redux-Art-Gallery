@@ -17,6 +17,10 @@ function App(props) {
         }
     };
 
+    useEffect(() => {
+        dispatch(fetchData());
+    }, [props.objectId, dispatch]);
+
     return (
         <div className="App">
             <div>
