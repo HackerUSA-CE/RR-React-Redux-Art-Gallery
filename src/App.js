@@ -1,22 +1,24 @@
 import './App.css';
 import { connect } from 'react-redux';
-import FetchButton from './components/FetchButton';
-import ClearButton from './components/ClearButton';
-import IncrementButton from './components/IncrementButton';
-import Back from './components/Back';
-import InputBar from './features/InputBar';
-import Image from './features/Image';
+import Thunk from './ActionButtons/Thunk';
+import Clear from './ActionButtons/Clear';
+import Next from './ActionButtons/Next';
+import Back from './ActionButtons/Back';
+import InputBar from './Features/InputBar';
+import Image from './Features/Image';
 
-function App(props) {
+function App() {
     return (
         <div className="App">
             <div>
-                <FetchButton />
-                <ClearButton />
-                <IncrementButton />
                 <Back />
+                <Thunk />
+                <Next />
             </div>
-            <InputBar />
+            <div>
+                <InputBar />
+                <Clear />
+            </div>
             <div>
                 <Image />
             </div>

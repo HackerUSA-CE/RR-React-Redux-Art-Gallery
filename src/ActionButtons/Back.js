@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { decrementId } from '../features/dataSlice';
+import { decrementId } from '../Features/dataSlice';
 function Back() {
     const dispatch = useDispatch();
     return <button onClick={() => dispatch(decrementId())}>Back</button>;
