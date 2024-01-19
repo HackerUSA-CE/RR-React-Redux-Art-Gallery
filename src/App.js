@@ -1,43 +1,24 @@
 import './App.css';
-import { useSelector, useDispatch, connect } from 'react-redux';
-import { clearData, fetchData, incrementId, decrementId, inputId } from './features/dataSlice';
+import { connect } from 'react-redux';
 import FetchButton from './components/FetchButton';
 import ClearButton from './components/ClearButton';
-import { useEffect } from 'react';
+import IncrementButton from './components/IncrementButton';
+import Back from './components/Back';
+import InputBar from './features/InputBar';
+import Image from './features/Image';
 
 function App(props) {
-    const dispatch = useDispatch();
-    const data = useSelector((state) => state.data);
-
-    const renderImg = () => {
-        if (data.apiData) {
-            return <img style={{ width: '100vw' }} src={data.apiData.primaryImage} alt={data.apiData.title} />;
-        } else {
-            return <p>image here</p>;
-        }
-    };
-
-    useEffect(() => {
-        dispatch(fetchData());
-    }, [props.objectId, dispatch]);
-
     return (
         <div className="App">
             <div>
                 <FetchButton />
                 <ClearButton />
-                <button onClick={() => dispatch(incrementId())}>Next</button>
-                <button onClick={() => dispatch(decrementId())}>Back</button>
+                <IncrementButton />
+                <Back />
             </div>
-            <input
-                value={data.objectId}
-                onChange={(e) => {
-                    dispatch(inputId(Number(e.target.value)));
-                }}
-            />
+            <InputBar />
             <div>
-                {data.objectId}
-                {renderImg()}
+                <Image />
             </div>
         </div>
     );
